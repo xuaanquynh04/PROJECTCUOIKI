@@ -1,8 +1,8 @@
-ca= [1, 2, 3, 4, 5, 6, 7, 8, 9]  # quy dinh O la so 0 con X la so 12 #player 1 thang thi kq=1 player2 thang thi kq=2
-flag = 1
+ca= [1, 2, 3, 4, 5, 6, 7, 8, 9]
 so = 0
 ketqua = 0
 p = "O"
+flag=1
 def ss(so,p):
     kq=0
     for i in range(0, 7, 3):
@@ -50,6 +50,7 @@ while flag == 1:
     p = "O"
     ca = xuly(so, p)
     ketqua = ss(so, p)
+    c=hien(so,p)
     if ketqua!=1:
         b = int(input("nguoi choi 2 muon danh X vao o nao "))
         so = b
