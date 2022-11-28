@@ -3,9 +3,9 @@ so = 0
 ketqua = 0
 p = "O"
 flag=1
-def ss(so,p):
+def ss(so,p): #so sánh để biết ai thắng
     kq=0
-    for i in range(0, 7, 3):
+    for i in range(0, 7, 3): #trường hợp theo hàng ngang
         if (ca[i] == ca[i + 1]):
             if ca[i] == ca[i + 2]:
                 if ca[i] == "O":
@@ -13,7 +13,7 @@ def ss(so,p):
                 else:
                     if ca[i]=="X":
                         kq=2
-    for i in range (0,3):
+    for i in range (0,3): #trường hợp theo hàng dọc
         if (ca[i] == ca[i + 3]):
             if ca[i] == ca[i + 6]:
                 if ca[i] == "O":
@@ -21,30 +21,25 @@ def ss(so,p):
                 else:
                     if ca[i]=="X":
                         kq=2
-    if ca[4]=="O":
+    if ca[4]=="O": #trường hợp chéo
         if (ca[0]=="O" and ca[8]=="O") or (ca[2]=="O"and ca[6]=="O"):
             kq=1
     elif (ca[0]=="X" and ca[8]=="X") or (ca[2]=="X"and ca[6]=="X"):
         kq=2
     return kq
-def xuly(so, p):
+def xuly(so, p): #cái này để thay thế số bằng dấu X hoặc O
     for i in range(0, 9):
         if so == ca[i]:
             ca.remove(ca[i])
             ca.insert(i, p)
     return ca
-def hien(so, p):
+def hien(so, p): #này  để hiển thị bàn cờ caro
     for i in range(0, 8, 3):
         c = str(ca[i]) + " " + str(ca[i + 1]) + " " + str(ca[i + 2])
         print(c)
-def xuly(so, p):
-    for i in range(0, 9):
-        if so == ca[i]:
-            ca.remove(ca[i])
-            ca.insert(i, p)
     return ca
 c = hien(so, p)
-while flag == 1:
+while flag == 1: #này là cho người chơi nhập vào, gọi các hàm ở trên ra cho nó gọn
     a=int(input("nguoi choi 1 muon danh O vao o nao "))
     so = a
     p = "O"
