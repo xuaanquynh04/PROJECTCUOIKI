@@ -1,38 +1,66 @@
-list1=[1,2,3,4,5,6,7,8,9] #quy dinh O la so 0 con X la so 12 #player 1 thang thi kq=1 player2 thang thi kq=2
-lista=[]
-listb=[]
-p1=int(input("nguoi choi chon O nhap so 0 "))
-p2=int(input("nguoi choi chon X nhap so 12 "))
-print(list1[0],list1[1], list1[2])
-print(list1[3], list1[4], list1[5])
-print(list1[6], list1[7], list1[8])
-flag=1
-kq=0
-so=0
-def lisst(so,p):
-    i = 0
-    for i in range(0, 8):
-        if so == list1[i]:
-            list1.remove(list1[i])
-            list1.insert(i, p)
-    return list1
-while flag==1:
-    a=int(input("nguoi choi 1 muon danh O vao o nao? "))
-    so=a
-    p=p1
-    list1=lisst(so,p)
-    b = int(input("nguoi choi 2 muon danh X vao o nao "))
-    so=b
-    p=p2
-    list1=lisst(so,p)
-    print(list1[0], list1[1], list1[2])
-    print(list1[3], list1[4], list1[5])
-    print(list1[6], list1[7], list1[8])
-    flag=0
-#print(list1) tu khuc nay tro len dung roi nha gio chi con so sanh index thoai!!!!
-
-
-
-
-
+ca= [1, 2, 3, 4, 5, 6, 7, 8, 9]  # quy dinh O la so 0 con X la so 12 #player 1 thang thi kq=1 player2 thang thi kq=2
+flag = 1
+so = 0
+ketqua = 0
+p = "O"
+def ss(so,p):
+    kq=0
+    for i in range(0, 7, 3):
+        if (ca[i] == ca[i + 1]):
+            if ca[i] == ca[i + 2]:
+                if ca[i] == "O":
+                    kq = 1
+                else:
+                    if ca[i]=="X":
+                        kq=2
+    for i in range (0,3):
+        if (ca[i] == ca[i + 3]):
+            if ca[i] == ca[i + 6]:
+                if ca[i] == "O":
+                    kq = 1
+                else:
+                    if ca[i]=="X":
+                        kq=2
+    if ca[4]=="O":
+        if (ca[0]=="O" and ca[8]=="O") or (ca[2]=="O"and ca[6]=="O"):
+            kq=1
+    elif (ca[0]=="X" and ca[8]=="X") or (ca[2]=="X"and ca[6]=="X"):
+        kq=2
+    return kq
+def xuly(so, p):
+    for i in range(0, 9):
+        if so == ca[i]:
+            ca.remove(ca[i])
+            ca.insert(i, p)
+    return ca
+def hien(so, p):
+    for i in range(0, 8, 3):
+        c = str(ca[i]) + " " + str(ca[i + 1]) + " " + str(ca[i + 2])
+        print(c)
+def xuly(so, p):
+    for i in range(0, 9):
+        if so == ca[i]:
+            ca.remove(ca[i])
+            ca.insert(i, p)
+    return ca
+c = hien(so, p)
+while flag == 1:
+    a=int(input("nguoi choi 1 muon danh O vao o nao "))
+    so = a
+    p = "O"
+    ca = xuly(so, p)
+    ketqua = ss(so, p)
+    if ketqua!=1:
+        b = int(input("nguoi choi 2 muon danh X vao o nao "))
+        so = b
+    p = "X"
+    ca = xuly(so, p)
+    ketqua = ss(so, p)
+    c = hien(so, p)
+    if ketqua == 1 or ketqua == 2:
+        flag = 0
+if ketqua == 1:
+    print("nguoi choi 1 thang ")
+else:
+    print("nguoi choi 2 thang ")
 
