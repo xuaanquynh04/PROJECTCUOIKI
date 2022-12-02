@@ -37,7 +37,7 @@ def hien(so, p): #này  để hiển thị bàn cờ caro
     for i in range(0, 8, 3):
         c = str(ca[i]) + " " + str(ca[i + 1]) + " " + str(ca[i + 2])
         print(c)
-c = hien(so, p)
+hien(so, p)
 #nếu flag=1 thì trò chơi vẫn tiếp tục (các câu lệnh trong hàm while vẫn diễn ra), khi có 1 trong 2 người chơi thắng thì flag=0, khi đó hàm while sẽ dừng lại
 while flag == 1: #này là cho người chơi nhập vào, gọi các hàm ở trên ra cho nó gọn
     a=int(input("nguoi choi 1 muon danh O vao o nao "))
@@ -45,14 +45,14 @@ while flag == 1: #này là cho người chơi nhập vào, gọi các hàm ở t
     p = "O"
     ca = xuly(so, p)
     ketqua = ss(so, p)
-    c=hien(so,p)
+    hien(so,p)
     if ketqua!=1:
         b = int(input("nguoi choi 2 muon danh X vao o nao "))
         so = b
     p = "X"
     ca = xuly(so, p)
     ketqua = ss(so, p)
-    c = hien(so, p)
+    hien(so, p)
     if ketqua == 1 or ketqua == 2:
         flag=0
     #khi mà có 1 trong hai người thắng thì flag=0, khi quay lên đầu hàm while thì điều kiện sẽ sai, do đó hàm while dừng lại
