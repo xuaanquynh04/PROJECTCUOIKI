@@ -53,7 +53,9 @@ while flag == 1: #này là cho người chơi nhập vào, gọi các hàm ở t
     ca = xuly(so, p)
     ketqua = ss(so, p)
     c = hien(so, p)
-    if ketqua == 1 or ketqua == 2: #khi mà có 1 trong hai người thắng thì flag=0, khi quay lên đầu hàm while thì điều kiện sẽ sai, do đó hàm while dừng lại
+    if ketqua == 1 or ketqua == 2:
+        flag=0
+    #khi mà có 1 trong hai người thắng thì flag=0, khi quay lên đầu hàm while thì điều kiện sẽ sai, do đó hàm while dừng lại
 if ketqua == 1: #xuất ai thắng ra màn hình
     print("nguoi choi 1 thang ")
 else:
