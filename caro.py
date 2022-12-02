@@ -37,7 +37,6 @@ def hien(so, p): #này  để hiển thị bàn cờ caro
     for i in range(0, 8, 3):
         c = str(ca[i]) + " " + str(ca[i + 1]) + " " + str(ca[i + 2])
         print(c)
-    return ca
 c = hien(so, p)
 while flag == 1: #này là cho người chơi nhập vào, gọi các hàm ở trên ra cho nó gọn
     a=int(input("nguoi choi 1 muon danh O vao o nao "))
