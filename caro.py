@@ -40,14 +40,24 @@ def hien(so, p): #này  để hiển thị bàn cờ caro
 hien(so, p)
 #nếu flag=1 thì trò chơi vẫn tiếp tục (các câu lệnh trong hàm while vẫn diễn ra), khi có 1 trong 2 người chơi thắng thì flag=0, khi đó hàm while sẽ dừng lại
 while flag == 1: #này là cho người chơi nhập vào, gọi các hàm ở trên ra cho nó gọn
-    a=int(input("nguoi choi 1 muon danh O vao o nao "))
+    a=10
+    while a>9:
+        try:
+            a=int(input("nguoi choi 1 muon danh O vao o nao "))
+        except ValueError:
+            a=int(input("ban da nhap chu. nhap lai so "))
     so = a
     p = "O"
     ca = xuly(so, p)
     ketqua = ss(so, p)
     hien(so,p)
+    b=10
     if ketqua!=1:
-        b = int(input("nguoi choi 2 muon danh X vao o nao "))
+        while b>9:
+            try:
+                b = int(input("nguoi choi 2 muon danh X vao o nao "))
+            except ValueError:
+                b = int(input("ban da nhap chu. nhap lai so "))
         so = b
     p = "X"
     ca = xuly(so, p)
